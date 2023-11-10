@@ -10,29 +10,24 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-<!-- font awesome -->
-<script src="https://kit.fontawesome.com/1ff7de2748.js" crossorigin="anonymous"></script>
-        
+
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/1ff7de2748.js" crossorigin="anonymous"></script>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @stack('css')
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        @include('layouts.includes.admin.nav');
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        @include('layouts.includes.admin.aside');
+
+        <div class="p-4 sm:ml-64">
+            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+                {{$slot}}
+            </div>
         </div>
+        @stack('js')
     </body>
 </html>
