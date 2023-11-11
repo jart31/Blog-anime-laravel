@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/admin', function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class)->names('admin.categories');
+    Route::resource('post', PostController::class)->names('admin.post');
 });
 
 Route::get('home', function () {

@@ -12,6 +12,12 @@
                 'active' => request()->routeIs('admin.categories.*'),
                 'icon' => 'fa-solid fa-inbox'
             ],
+            [
+                'name' => 'Articulos',
+                'url' => route('admin.post.index'),
+                'active' => request()->routeIs('admin.post.*'),
+                'icon' => 'fa-solid fa-blog'
+            ],
         ];
 @endphp
 
