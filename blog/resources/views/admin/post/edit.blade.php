@@ -11,7 +11,8 @@
         <div class="mb-6 relative">
 
             <figure>
-                <img class="aspect-[16/9] object-cover object-center w-full" src="{{ $post->image }}" alt=""
+                <img class="aspect-[16/9] object-cover object-center w-full"
+                src="{{ asset('storage/images/' . $post->image_path) }}" alt=""
                     id="imgPreview">
             </figure>
 

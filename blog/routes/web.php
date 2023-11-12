@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +45,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// Route::get('/posts/{post}/image', [PostController::class, 'image'])
+//     ->name('posts.image');
 
+// Route::post('images/upload', [ImageController::class, 'upload'])
+//     ->name('images.upload');
+
+// Route::get('prueba', function(){
+//     $files = Storage::files('images');
+//     $images = Image::pluck('path')->toArray();
+
+//     Storage::delete(array_diff($files, $images));
+// });
 require __DIR__.'/auth.php';

@@ -81,8 +81,14 @@ class PostController extends Controller
             'body' => $request->published ? 'required' : 'nullable',
             'published' => 'required|boolean',
             'tags' => 'nullable|array',
-            //'image' => 'nullable|image'
+            'image' => 'nullable|image'
         ]);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images');
+            // Cambia 'image' por 'image_path' aquí
+            $post->image_path = basename($imagePath);
+        }
+
 
         $tags = [];
         foreach($request->tags ?? [] as $name)

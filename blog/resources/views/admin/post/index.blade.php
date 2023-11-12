@@ -9,7 +9,7 @@
             <li class="grid grid-cols-2 gap-4">
                 <div>
                     <a href="{{route('admin.post.edit', $post1)}}">
-                        <img class="aspect-[16/9] object-cover object-center w-full" src="{{$post1->image}}" alt="">
+                        <img class="aspect-[16/9] object-cover object-center w-full" src="{{ asset('storage/images/' . $post1->image_path) }}" alt="">
                     </a>
                 </div>
                 <div>
