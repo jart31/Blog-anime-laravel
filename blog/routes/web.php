@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use App\Http\Controllers\ArticleController;
 | que contiene el grupo de middleware "web".
 |
 */
+
+
+Route::get('/posts/{id}/pdf', [PdfController::class, 'imprimirPost'])->name('posts.pdf');
 
 Route::get('/', function () {
     return view('welcome');

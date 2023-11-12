@@ -18,6 +18,10 @@
                 {!! $post->body !!} <!-- Asegúrate de escapar o sanear el contenido si es necesario -->
             </div>
         </div>
+            <!-- Botón para imprimir el post en PDF -->
+    <div class="flex justify-center mt-4">
+        <a href="{{ route('posts.pdf', $post->id) }}" class="btn btn-primary">Imprimir en PDF</a>
+    </div>
     </div>
 
 </x-app-layout>
