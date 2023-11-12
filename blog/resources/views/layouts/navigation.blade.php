@@ -1,15 +1,15 @@
 @php
     $links = [
         [
-            'name' => 'Dashboard',
+            'name' => 'Inicio',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard')
 
         ],
         [
             'name' => 'Articulos',
-            'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard')
+            'url' => route('articles'),
+            'active' => request()->routeIs('articles')
 
         ]
     ];
@@ -65,7 +65,7 @@
 
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                                Perfil
                             </x-dropdown-link>
 
                             <!-- Authentication -->
@@ -75,7 +75,7 @@
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    Cerrar Sesión
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -83,10 +83,10 @@
                 </div>
             @else
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                       <a href="{{ route('login') }}" class=" text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-blue focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                       <a href="{{ route('login') }}" class=" text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-blue focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4  text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-blue focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4  text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-blue focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrarse</a>
                         @endif
 
                 </div>
