@@ -4,7 +4,7 @@
         <ul class="space-y-8">
             @foreach ($articles as $article)
                 <li class="grid grid-cols-2 gap-4">
-                    <div class="w-1/2">
+                    <div >
                         <!-- Aquí puedes enlazar a una vista de detalle del artículo si existe -->
                         <a href="{{ route('posts.show', $article) }}">
                             <img class="aspect-[16/9] object-cover object-center w-full" src="{{ asset('storage/images/' . $article->image_path) }}" alt="{{ $article->title }}">
