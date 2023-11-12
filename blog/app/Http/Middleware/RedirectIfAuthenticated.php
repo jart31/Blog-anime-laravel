@@ -21,6 +21,10 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                // Aquí es donde puedes añadir tu lógica personalizada
+                if (auth()->user()->is_admin) {
+                    return redirect('/admin/dashboard');
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

@@ -17,8 +17,12 @@
                         <hr class="mt-1 mb-2">
                         <p class="text-gray-700 mt-2">
                             {{ $article->excerpt }}
-                        </p>
+                        </p> <br><br><br>
+                        <a href="{{ route('posts.show', $article) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                            Leer Post
+                        </a>
                     </div>
+
                 </li>
             @endforeach
         </ul>

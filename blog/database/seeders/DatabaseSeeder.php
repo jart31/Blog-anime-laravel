@@ -12,13 +12,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
-        \App\Models\Category::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'name' => 'jart',
             'email' => 'jaime@gmail.com',
-            'password' => bcrypt('1234asdf')
+            'password' => bcrypt('1234asdf'),
+            'is_admin' => 0
         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('1234asdf'), // Aunque ya está definido en el factory, lo reiteramos para claridad
+            'is_admin' => 1
+        ]);
+
+        $this->call(CategorySeeder::class);
+        $this->call(PostSeeder::class);
+
+
+
     }
 }
